@@ -37,7 +37,7 @@ Highlevel overview of what we are going to create:
 2. Click on the config tab
 3. Inside config tab, click on the preview tab
 4. The preview tab is extremely helpful during development, it shows two windows on the right side. The window on the top shows the input, the window on the botton shows the output. Keep in mind this is a preview to show how the output will look when data is being sent out. This provides you the oppertunity to change fields/values and see that your transformation logic is working correctly.   
-5. Copy and paste this into the pipe after field `"type": "pipe"` 
+5. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
 {
   "_id": "cardealer-source-(yourname)",
@@ -118,7 +118,7 @@ Highlevel overview of what we are going to create:
 
 ## Assignment 3: Create an inbound pipe
 1. Click on create a new pipe
-2. Copy and pase this into the pipe (remember to add your name in the end):
+2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
 {
   "_id": "cardealer-inbound-(yourname)",
@@ -128,8 +128,57 @@ Highlevel overview of what we are going to create:
     "dataset": "cardealer-source-dler"
   }
 }
-
 ```
+3. Now click on Save pipe
+
+## Assignment 4: Create a global pipe
+1. Click on create a new pipe
+2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
+```json
+{
+  "_id": "global-cardealer-dler",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "cardealer-inbound-dler"
+  },
+  "metadata": {
+    "global": true
+  }
+}
+```
+3. Now click on Save pipe
+
+## Assignment 5: Create a preperation pipe
+1. Click on create a new pipe
+2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
+```json
+{
+  "_id": "cardealer-preperation-dler",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-cardealer-dler"
+  }
+}
+```
+3. Now click on Save pipe
+
+## Assignment 6: Create an endpoint pipe
+1. Click on create a new pipe
+2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
+```json
+{
+  "_id": "cardealer-endpoint-dler",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "cardealer-preperation-dler"
+  }
+}
+```
+3. Now click on Save pipe
+
 
 
 
