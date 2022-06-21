@@ -1,6 +1,10 @@
 # Sesam workshop
 This is a guide to get started with sesam.
 
+References:
+- [Sesam GUI platform](https://portal.sesam.io/)
+- [List of all DTL's](https://docs.sesam.io/DTLReferenceGuide.html#concat-dtl-function)
+
 
 ## Learning outcome besides the presentation
 By the end of this workshop you will learn the following: 
