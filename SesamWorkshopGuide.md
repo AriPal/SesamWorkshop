@@ -186,6 +186,37 @@ Highlevel overview of what we are going to create:
 3. Inside the ´default: []´ is where you are going to add all the DTL logic that will transform the input to expected output.
 4. Copy and paste this logic inside the ´default: []´ array:
 ´´´json
+{
+  "_id": "cardealer-preperation-dler",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-cardealer-dler"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": [
+        ["filter",
+          ["and",
+            ["eq", "_S.sold", true],
+            ["gt", "_S.price", 500000]
+          ]
+        ],
+        ["copy", "*"],
+        ["if",
+          ["gt", "_S.price", 500000],
+          ["add", "expensive", true]
+        ],
+        ["add", "brandModel",
+          ["concat", "_S.brand", " ", "_S.type"]
+        ],
+        ["remove", "brand"],
+        ["remove", "type"]
+      ]
+    }
+  }
+}
 
 ´´´´
 
