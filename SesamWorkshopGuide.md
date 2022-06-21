@@ -201,6 +201,11 @@ Highlevel overview of what we are going to create:
 }
 
 ```
+3. The `filter` DTL gets only cars that are sold equal to true and price over 500.000 KR
+4. The `copy` DTL copies everything from input to output
+5. The `concat` DTL is used to put text-values together
+6. The `remove` DTL is used to remove a field or multiple fields
+7. The `if` DTL is a contional statement used to add an field if condition is true
 
 
 
