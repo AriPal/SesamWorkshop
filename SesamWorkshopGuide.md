@@ -22,11 +22,15 @@ By the end of this workshop you will learn the following:
   "type": "pipe"
 }
 ```
+6. Now click on Save pipe
 
 
 ## Assignment 2: Add embedded-data "testdata"
-1. Go the the pipe you recently created *cardealer-source-(your name)*. Currently the pipe is not doing anything special except only visible in GUI platform. 
-2. Copy and pase this into the pipe after field `"type": "pipe"` 
+1. Go the the pipe you recently created *cardealer-source-(your name)*. Currently the pipe is not doing anything special except only visible in the GUI platform.
+2. Click on the config tab
+3. Inside config tab, click on the preview tab
+4. The preview tab is extremely helpful during development, it shows two windows on the right side. The window on the top shows the input, the window on the botton shows the output. Keep in mind this is a preview to show how the output will look when data is being sent out. This provides you the oppertunity to change fields/values and see that your transformation logic is working correctly.   
+5. Copy and paste this into the pipe after field `"type": "pipe"` 
 ```json
 "source": {
   "type": "embedded",
@@ -73,4 +77,6 @@ By the end of this workshop you will learn the following:
   }]
 }
 ``` 
+6. Now click on Save pipe
+
 
