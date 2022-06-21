@@ -9,6 +9,8 @@ By the end of this workshop you will learn the following:
 3. Get better understanding of these DTL's work like `add`, `copy`, `filter`, `apply` and so on
 4. How to integrate pipes so one pipe can receive data from another pipe
 
+Note: Before you can access sesam GUI platform, you must accept the sesam invitation-link sent to your email. 
+
 ## Assignment 1: Create a pipe
 
 1. Go to https://portal.sesam.io/
@@ -78,5 +80,15 @@ By the end of this workshop you will learn the following:
 }
 ``` 
 6. Now click on Save pipe
-
+7. Verify in the preview window bottom-right you have this data: 
+```json
+[
+  {
+    "_id": "cardealer-source-test:1",
+    "cardealer-source-test:VIN": "YV1LFBABDH1145316",
+    "cardealer-source-test:model": "Volvo XC90",
+    "cardealer-source-test:price": 850000
+  }
+]
+```
 
