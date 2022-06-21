@@ -160,6 +160,30 @@ Highlevel overview of what we are going to create:
 ```
 3. Now click on Save pipe
 
+## Assigment 6: Add transformation logic to preperation pipe
+1. Gå to pipe *cardealer-preperation-(yourname)*
+2. Add field transformation like: 
+```json
+{
+  "_id": "cardealer-preperation-dler",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "global-cardealer-dler"
+  },
+  "transform": {
+    "type": "dtl",
+    "rules": {
+      "default": []
+    }
+  }
+}
+```
+3. Inside the ´default: []´ is where you are going to add all the DTL logic that will transform the input to expected output.
+4. Copy and paste this logic inside the ´default: []´ array:
+´´´json
+
+´´´´
 
 
 
