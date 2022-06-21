@@ -1,6 +1,8 @@
 # Sesam workshop
 This is a guide to get started with sesam.
 
+
+## Learning outcome
 By the end of this workshop you will learn the following: 
 1. Create a pipe
 2. Create test-data using embeddeddata
