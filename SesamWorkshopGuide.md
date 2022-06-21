@@ -14,7 +14,7 @@ By the end of this workshop you will learn the following:
 ## Create a pipe
 
 1. Go to https://portal.sesam.io/
-2. Find the node you are assigned
+2. Find the node you are assigned *DELE 01.1 Workshop Trainee Node*
 3. On left menu, click on pipes
 4. On the right click on the button create pipe
 
