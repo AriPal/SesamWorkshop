@@ -13,26 +13,7 @@ Highlevel overview of what we are going to create:
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
 
-## Assignment 1: Create a pipe
-
-1. Go to https://portal.sesam.io/
-2. Find the node and click on it *DELE 01.1 Workshop Trainee Node*
-3. On the left menu, click on the tab pipes
-4. On the top right click on the button create pipe
-5. Name the pipe *cardealer-source-petter*, add your name in the end
-```json
-{
-  "_id": "cardealer-source-petter",
-  "type": "pipe"
-}
-```
-6. Now click on Save pipe
-7. Verify the pipe is created in pipes page:
-![image](https://user-images.githubusercontent.com/8822677/174819092-2ed9b71b-59b1-42a5-ac08-d6cd6df4cd0f.png)
-
-
-
-## Assignment 2: Add embedded-data "testdata"
+## Assignment 1: Create a pipe with embedded-data
 1. Go the the pipe you recently created *cardealer-source-(your name)*. Currently the pipe is not doing anything special except only visible in the GUI platform.
 2. Click on the config tab
 3. Inside config tab, click on the preview tab
@@ -116,7 +97,7 @@ Highlevel overview of what we are going to create:
 7. Verify in the preview window bottom-right that the first result is car type Volvo XC90: 
 ![image](https://user-images.githubusercontent.com/8822677/174818810-7975f0b7-60f7-4d48-977f-ddb01babb5d5.png)
 
-## Assignment 3: Create an inbound pipe
+## Assignment 2: Create an inbound pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -131,7 +112,7 @@ Highlevel overview of what we are going to create:
 ```
 3. Now click on Save pipe
 
-## Assignment 4: Create a global pipe
+## Assignment 3: Create a global pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -149,7 +130,7 @@ Highlevel overview of what we are going to create:
 ```
 3. Now click on Save pipe
 
-## Assignment 5: Create a preperation pipe
+## Assignment 4: Create a preperation pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -164,7 +145,7 @@ Highlevel overview of what we are going to create:
 ```
 3. Now click on Save pipe
 
-## Assignment 6: Create an endpoint pipe
+## Assignment 5: Create an endpoint pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
