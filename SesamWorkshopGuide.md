@@ -9,7 +9,9 @@ By the end of this workshop you will learn the following:
 3. Get better understanding of these DTL's work like `add`, `copy`, `filter`, `apply` and so on
 4. How to integrate pipes so one pipe can receive data from another pipe
 
-Note: Before you can access sesam GUI platform, you must accept the sesam invitation-link sent to your email. 
+Highlevel overview of what we are going to create: 
+![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
+
 
 ## Assignment 1: Create a pipe
 
@@ -25,6 +27,9 @@ Note: Before you can access sesam GUI platform, you must accept the sesam invita
 }
 ```
 6. Now click on Save pipe
+7. Verify the pipe is created in pipes page:
+![image](https://user-images.githubusercontent.com/8822677/174819092-2ed9b71b-59b1-42a5-ac08-d6cd6df4cd0f.png)
+
 
 
 ## Assignment 2: Add embedded-data "testdata"
@@ -34,61 +39,100 @@ Note: Before you can access sesam GUI platform, you must accept the sesam invita
 4. The preview tab is extremely helpful during development, it shows two windows on the right side. The window on the top shows the input, the window on the botton shows the output. Keep in mind this is a preview to show how the output will look when data is being sent out. This provides you the oppertunity to change fields/values and see that your transformation logic is working correctly.   
 5. Copy and paste this into the pipe after field `"type": "pipe"` 
 ```json
-"source": {
-  "type": "embedded",
-  "entities": [{
-    "_id": "1",
-    "VIN": "YV1LFBABDH1145316",
-    "price": 850000,
-    "model": "Volvo XC90"
-  }, {
-    "_id": "2",
-    "VIN": "JH4KA4576KC031014",
-    "price": 350000,
-    "model": "Mercedes Benz CLA200"
-  }, {
-    "_id": "3",
-    "VIN": "2T1BR32E56C640079",
-    "price": 650000,
-    "model": "BMW X5"
-  }, {
-    "_id": "4",
-    "VIN": "JTHFE2C24A2504933",
-    "price": 250000,
-    "model": "BMW X3"
-  }, {
-    "_id": "5",
-    "VIN": "J8DE5B16477903094",
-    "price": 750000,
-    "model": "Mercedes GLC 350de"
-  }, {
-    "_id": "6",
-    "VIN": "JH4CC2560PC005719",
-    "price": 950000,
-    "model": "BMW i8"
-  }, {
-    "_id": "7",
-    "VIN": "1G1ZT51806F128009",
-    "price": 350000,
-    "model": "Volco XC40"
-  }, {
-    "_id": "8",
-    "VIN": "KMHFG4JG1CA181127",
-    "price": 700000,
-    "model": "Volco XC60"
-  }]
+{
+  "_id": "cardealer-source-(yourname)",
+  "type": "pipe",
+  "source": {
+    "type": "embedded",
+    "entities": [{
+      "_id": "1",
+      "type": "XC90",
+      "VIN": "YV1LFBABDH1145316",
+      "brand": "Volvo",
+      "manufacturedYear": 2019,
+      "price": 850000,
+      "sold": true
+    }, {
+      "_id": "2",
+      "type": "CLA200",
+      "VIN": "JH4KA4576KC031014",
+      "brand": "Mercedes-Benz",
+      "manufacturedYear": 2015,
+      "price": 350000,
+      "sold": false
+    }, {
+      "_id": "3",
+      "type": "X5",
+      "VIN": "2T1BR32E56C640079",
+      "brand": "BMW",
+      "manufacturedYear": 2013,
+      "price": 650000,
+      "sold": false
+    }, {
+      "_id": "4",
+      "type": "X3",
+      "VIN": "JTHFE2C24A2504933",
+      "brand": "BMW",
+      "manufacturedYear": 2010,
+      "price": 250000,
+      "sold": true
+    }, {
+      "_id": "5",
+      "type": "CLA350de",
+      "VIN": "J8DE5B16477903094",
+      "brand": "Mercedes-Benz",
+      "manufacturedYear": 2018,
+      "price": 750000,
+      "sold": false
+    }, {
+      "_id": "6",
+      "type": "i8",
+      "VIN": "JH4CC2560PC005719",
+      "brand": "BMW",
+      "manufacturedYear": 2014,
+      "price": 950000,
+      "sold": true
+    }, {
+      "_id": "7",
+      "type": "XC40",
+      "VIN": "1G1ZT51806F128009",
+      "brand": "Volco",
+      "manufacturedYear": 2014,
+      "price": 350000,
+      "sold": true
+    }, {
+      "_id": "8",
+      "type": "XC60",
+      "VIN": "KMHFG4JG1CA181127",
+      "brand": "Volco",
+      "manufacturedYear": 2021,
+      "price": 700000,
+      "sold": false
+    }]
+  }
 }
 ``` 
 6. Now click on Save pipe
-7. Verify in the preview window bottom-right you have this data: 
+7. Verify in the preview window bottom-right that the first result is car type Volvo XC90: 
+![image](https://user-images.githubusercontent.com/8822677/174818810-7975f0b7-60f7-4d48-977f-ddb01babb5d5.png)
+
+## Assignment 3: Create an inbound pipe
+1. Click on create a new pipe
+2. Copy and pase this into the pipe (remember to add your name in the end):
 ```json
-[
-  {
-    "_id": "cardealer-source-test:1",
-    "cardealer-source-test:VIN": "YV1LFBABDH1145316",
-    "cardealer-source-test:model": "Volvo XC90",
-    "cardealer-source-test:price": 850000
+{
+  "_id": "cardealer-inbound-(yourname)",
+  "type": "pipe",
+  "source": {
+    "type": "dataset",
+    "dataset": "cardealer-source-dler"
   }
-]
+}
+
 ```
+
+
+
+
+
 
