@@ -21,13 +21,13 @@ Cardealer has a system that shows cars that are sold and not sold like Volvo, Me
 Here is a preview of what the cardealer has stored: 
 ```json
 {
-  "_id": "2",
-  "type": "CLA200",
-  "VIN": "JH4KA4576KC031014",
-  "brand": "Mercedes-Benz",
-  "manufacturedYear": 2015,
-  "price": 350000,
-  "sold": false
+  "_id": "6",
+  "type": "i8",
+  "VIN": "JH4CC2560PC005719",
+  "brand": "BMW",
+  "manufacturedYear": 2014,
+  "price": 950000,
+  "sold": true
 }
 ```
 
