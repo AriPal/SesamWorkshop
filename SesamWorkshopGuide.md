@@ -266,7 +266,7 @@ Once all tasks are completed the outcome should look like this (your name in the
 6. Go to output tab and verify data is being sent out
 
 The following describes what each DTL in the code above does: 
-- The `filter` DTL gets only cars that are sold equal to true and price over 500.000 KR
+- The `filter` DTL gets only cars that are sold equal to true and price over 500.000
 - The `copy` DTL copies everything from input to output
 - The `concat` DTL is used to put text-values together
 - The `remove` DTL is used to remove a field or multiple fields
