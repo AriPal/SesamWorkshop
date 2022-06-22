@@ -13,7 +13,7 @@ By the end of this workshop you will learn the following:
 3. Preview data for debugging
 4. Establish connection between pipes
 5. Add mock-data using embedded-data
-6. Get better understanding of various DTL's like `add`, `copy`, `filter`, `apply`
+6. Get better understanding of various DTL's like `add`, `copy`, `remove`, `concat`, `filter`, `apply`
 
 ## Problem statement
 Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the following information: 
