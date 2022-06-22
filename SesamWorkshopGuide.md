@@ -43,6 +43,13 @@ And this is what the supplier wants (expected result):
 }
 ```
 
+The supplier wants to get: 
+- Only cars that are sold
+- Only cars that cost over 500.000
+- If car cost more than 800.000, add a field `expensive:true`
+- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90`
+- Remove field brand and type
+
 The outcome is to have a dataflow that looks like this with your name after each pipe. The following assignments will help you to achieve this. 
 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
