@@ -16,6 +16,35 @@ By the end of this workshop you will learn the following:
 Highlevel overview of what we are going to create: 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
+## Problem statement
+Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the followin information: 
+
+Here is a preview of what the cardealer has stored: 
+```json
+{
+  "_id": "2",
+  "type": "CLA200",
+  "VIN": "JH4KA4576KC031014",
+  "brand": "Mercedes-Benz",
+  "manufacturedYear": 2015,
+  "price": 350000,
+  "sold": false
+}
+```
+
+And this is what the supplier wants: 
+```json
+{
+  "cardealer-preperation-dler:brandModel": "BMW i8",
+  "cardealer-preperation-dler:expensive": true,
+  "cardealer-source-dler:VIN": "JH4CC2560PC005719",
+  "cardealer-source-dler:manufacturedYear": 2014,
+  "cardealer-source-dler:price": 950000,
+  "cardealer-source-dler:sold": true
+}
+```
+
+
 
 ## Assignment 1: Create a pipe with embedded-data
 1. Go the the pipe you recently created *cardealer-source-(your name)*. Currently the pipe is not doing anything special except only visible in the GUI platform.
