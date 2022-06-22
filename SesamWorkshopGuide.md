@@ -30,10 +30,18 @@ The supplier wants to get:
 The work tasks that needs to be solved (note when each pipe has been saved, remember to start the pipe so it can output the result): 
 1. Create a cardealer-source-(yourname) pipe that sends embedded data out 
 2. Create a cardealer-inbound-(yourname) pipe that only receives data from cardealer-source-(yourname) and sends out without doing any changes to the data 
-3. Create a global-cardealer-(yourname) pipe that only receives data from cardealer-inbound-(yourname) and sends out without doing any changes to the data (same implementation as task 2 except we receive data from a different pipe).
-4. Create a cardealer-preperation-(yourname) pipe that only receives data from global-cardealer-(yourname) and sends out with the following changes:  
+3. Create a global-cardealer-(yourname) pipe that only receives data from cardealer-inbound-(yourname) and sends out without doing any changes to the data 
+4. Create a cardealer-preperation-(yourname) pipe that only receives data from global-cardealer-(yourname) and sends out without doing any changes to the data
+5. Create a cardealer-endpoint-(yourname) pipe that only receives data from cardealer-preperation-(yourname) and sends out without doing any changes to the data
+6. Go to the cardealer-preperation-(yourname) pipe as previously created, and add the following changes using DTL's as shown in the presentation or can be find [here](https://docs.sesam.io/DTLReferenceGuide.html#concat-dtl-function): 
 
-Input from global-cardealer-(yourname) pipe: 
+- Only cars that are sold (Hint: filter)
+- Only cars that cost over 500.000 (hint: filter)
+- If car cost more than 800.000, add a field `expensive:true` (hint: if)
+- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90` (hint: concat)
+- Remove field brand and type (hint: remove)
+
+Input we receive in cardealer-preperation-(yourname) pipe: 
 ```json
 {
   "cardealer-source-dler:VIN": "JH4CC2560PC005719",
@@ -45,7 +53,7 @@ Input from global-cardealer-(yourname) pipe:
 }
 ```
 
-Output from cardealer-preperation-(yourname) pipe: 
+Output we send out in cardealer-preperation-(yourname) pipe (expected result): 
 ```json
 {
   "cardealer-preperation-dler:brandModel": "BMW i8",
@@ -57,23 +65,8 @@ Output from cardealer-preperation-(yourname) pipe:
 }
 ```
 
-To achieve this, here are the following changes that needs to be implemented in cardealer-preperation-(yourname) pipe, all this can be achieved by using the DTL examples we've shown in the presentation, hints are also added below: 
-- Only cars that are sold (Hint: filter)
-- Only cars that cost over 500.000 (hint: filter)
-- If car cost more than 800.000, add a field `expensive:true` (hint: if)
-- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90` (hint: concat)
-- Remove field brand and type (hint: remove)
-
-[List of all DTL's](https://docs.sesam.io/DTLReferenceGuide.html#concat-dtl-function)
-
-5. Create a cardealer-endpoint-(yourname) pipe that only receives data from cardealer-preperation-(yourname) and sends out without doing any changes to the data  
-
-
-Once all tasks are completed the outcome should look like this (your name in the end of each pipe). Keep in mind the embedded-data pipe is not something we will create, it has been added to show that this data will come from an actual system (external service).
+Once all tasks are completed the outcome should look like this (your name in the end of each pipe). Keep in mind the embedded-data pipe is not something we will create in this workshop, it has been added to illustrate that this data will come from an actual system (external service). In our case we have created some mock-up data in cardealer-inbound-(yourname) pipe. 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
-
-
-
 
 ## Solution 1: Create a pipe with embedded-data
 1. Click on create a new pipe
