@@ -16,22 +16,36 @@ By the end of this workshop you will learn the following:
 6. Get better understanding of various DTL's like `add`, `copy`, `filter`, `apply`
 
 ## Problem statement
-Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the followin information: 
+Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the following information: 
 
-Here is a preview of what the cardealer has stored: 
+
+The supplier wants to get: 
+- Only cars that are sold
+- Only cars that cost over 500.000
+- If car cost more than 800.000, add a field `expensive:true`
+- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90`
+- Remove field brand and type
+
+
+The work tasks that needs to be solved: 
+1. Create a cardealer-source-(yourname) pipe that sends embedded data out 
+2. Create a cardealer-inbound-(yourname) pipe that only receives data from cardealer-source-(yourname) and sends out without doing any changes to the data 
+3. Create a global-cardealer-(yourname) pipe that only receives data from cardealer-inbound-(yourname) and sends out without doing any changes to the data (same implementation as task 2 except we receive data from a different pipe).
+4. Create a cardealer-preperation-(yourname) pipe that only receives data from global-cardealer-(yourname) and sends out with the following changes:  
+
+Once we receive this data from global-cardealer-(yourname) pipe: 
 ```json
 {
-  "_id": "6",
-  "type": "i8",
-  "VIN": "JH4CC2560PC005719",
-  "brand": "BMW",
-  "manufacturedYear": 2014,
-  "price": 950000,
-  "sold": true
+  "cardealer-source-dler:VIN": "JH4CC2560PC005719",
+  "cardealer-source-dler:brand": "BMW",
+  "cardealer-source-dler:manufacturedYear": 2014,
+  "cardealer-source-dler:price": 950000,
+  "cardealer-source-dler:sold": true,
+  "cardealer-source-dler:type": "i8"
 }
 ```
 
-And this is what the supplier wants (expected result): 
+We want the output in cardealer-preperation-(yourname) pipe to look like this: 
 ```json
 {
   "cardealer-preperation-dler:brandModel": "BMW i8",
@@ -43,19 +57,16 @@ And this is what the supplier wants (expected result):
 }
 ```
 
-The supplier wants to get: 
-- Only cars that are sold
-- Only cars that cost over 500.000
-- If car cost more than 800.000, add a field `expensive:true`
-- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90`
-- Remove field brand and type
+The following is the changes that must be done in cardealer-preperation-(yourname) pipe, all this can be achieved by using the DTL examples shown in presentation. 
+- Only cars that are sold (Hint: filter)
+- Only cars that cost over 500.000 (hint: filter)
+- If car cost more than 800.000, add a field `expensive:true` (hint: if)
+- Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90` (hint: concat)
+- Remove field brand and type (hint: remove)
 
-The outcome is to have a dataflow that looks like this with your name after each pipe. The following assignments will help you to achieve this. 
-
+Once all tasks are completed the outcome should look like this (your name in the end of each pipe). Keep in mind the embedded-data pipe is not something we will create, it has been added to show that this data will come from an actual system (external service).
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
-1. Create a cardealer-source-(yourname) pipe that sends embedded data out. 
-2. 
 
 
 
