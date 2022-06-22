@@ -66,7 +66,7 @@ Output we send out in cardealer-preperation-(yourname) pipe (expected result):
 ```
 
 Once all tasks are completed the outcome should look like this (your name in the end of each pipe). Keep in mind the embedded-data pipe is not something we will create in this workshop, it has been added to illustrate that this data will come from an actual system (external service). In our case we have created some mock-up data in cardealer-inbound-(yourname) pipe. 
-![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
+![image](https://user-images.githubusercontent.com/8822677/174970799-c80f789f-f12f-492f-8d26-82ae1f5c83c2.png)
 
 ## Solution 1: Create a pipe with embedded-data
 1. Click on create a new pipe
