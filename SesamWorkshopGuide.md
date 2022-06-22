@@ -13,9 +13,6 @@ By the end of this workshop you will learn the following:
 3. Get better understanding of these DTL's work like `add`, `copy`, `filter`, `apply` and so on
 4. How to integrate pipes so one pipe can receive data from another pipe
 
-Highlevel overview of what we are going to create: 
-![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
-
 ## Problem statement
 Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the followin information: 
 
@@ -43,6 +40,11 @@ And this is what the supplier wants:
   "cardealer-source-dler:sold": true
 }
 ```
+
+To provide something like this we must set up an data-flow that looks like this (with your name after each pipe). The logic to transform the data needs to be in cardealer-preperation-(yourname) pipe. 
+
+Highlevel overview of what we are going to create: 
+![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
 
 
