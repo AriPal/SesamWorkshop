@@ -54,9 +54,12 @@ The outcome is to have a dataflow that looks like this with your name after each
 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
+1. Create a cardealer-source-(yourname) pipe that sends embedded data out. 
+2. 
 
 
-## Assignment 1: Create a pipe with embedded-data
+
+## Solution 1: Create a pipe with embedded-data
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -137,7 +140,7 @@ The outcome is to have a dataflow that looks like this with your name after each
 7. Start the pipe
 8. Go to output tab and verify data is being sent out
 
-## Assignment 2: Create an inbound pipe
+## Solution 2: Create an inbound pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -154,7 +157,7 @@ The outcome is to have a dataflow that looks like this with your name after each
 4. Start the pipe
 5. Go to output tab and verify data is being sent out
 
-## Assignment 3: Create a global pipe
+## Solution 3: Create a global pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -174,7 +177,7 @@ The outcome is to have a dataflow that looks like this with your name after each
 4. Start the pipe
 5. Go to output tab and verify data is being sent out
 
-## Assignment 4: Create a preperation pipe
+## Solution 4: Create a preperation pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -191,7 +194,7 @@ The outcome is to have a dataflow that looks like this with your name after each
 4. Start the pipe
 5. Go to output tab and verify data is being sent out
 
-## Assignment 5: Create an endpoint pipe
+## Solution 5: Create an endpoint pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
@@ -208,7 +211,7 @@ The outcome is to have a dataflow that looks like this with your name after each
 4. Start the pipe
 5. Go to output tab and verify data is being sent out
 
-## Assigment 6: Add transformation logic to preperation pipe
+## Solution 6: Add transformation logic to preperation pipe
 1. Gå to pipe *cardealer-preperation-(yourname)*
 2. Add field transformation like: 
 ```json
