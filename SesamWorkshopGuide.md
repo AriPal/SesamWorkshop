@@ -57,11 +57,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 
 
 ## Assignment 1: Create a pipe with embedded-data
-1. Go the the pipe you recently created *cardealer-source-(your name)*. Currently the pipe is not doing anything special except only visible in the GUI platform.
-2. Click on the config tab
-3. Inside config tab, click on the preview tab
-4. The preview tab is extremely helpful during development, it shows two windows on the right side. The window on the top shows the input, the window on the botton shows the output. Keep in mind this is a preview to show how the output will look when data is being sent out. This provides you the oppertunity to change fields/values and see that your transformation logic is working correctly.   
-5. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
+1. Click on create a new pipe
+2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
 {
   "_id": "cardealer-source-(yourname)",
@@ -137,8 +134,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 ``` 
 6. Now click on Save pipe
-7. Verify in the preview window bottom-right that the first result is car type Volvo XC90: 
-![image](https://user-images.githubusercontent.com/8822677/174818810-7975f0b7-60f7-4d48-977f-ddb01babb5d5.png)
+7. Start the pipe
+8. Go to output tab and verify data is being sent out
 
 ## Assignment 2: Create an inbound pipe
 1. Click on create a new pipe
@@ -154,6 +151,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 ```
 3. Now click on Save pipe
+4. Start the pipe
+5. Go to output tab and verify data is being sent out
 
 ## Assignment 3: Create a global pipe
 1. Click on create a new pipe
@@ -172,6 +171,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 ```
 3. Now click on Save pipe
+4. Start the pipe
+5. Go to output tab and verify data is being sent out
 
 ## Assignment 4: Create a preperation pipe
 1. Click on create a new pipe
@@ -187,6 +188,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 ```
 3. Now click on Save pipe
+4. Start the pipe
+5. Go to output tab and verify data is being sent out
 
 ## Assignment 5: Create an endpoint pipe
 1. Click on create a new pipe
@@ -202,6 +205,8 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 ```
 3. Now click on Save pipe
+4. Start the pipe
+5. Go to output tab and verify data is being sent out
 
 ## Assigment 6: Add transformation logic to preperation pipe
 1. Gå to pipe *cardealer-preperation-(yourname)*
@@ -240,11 +245,16 @@ The outcome is to have a dataflow that looks like this with your name after each
 }
 
 ```
-3. The `filter` DTL gets only cars that are sold equal to true and price over 500.000 KR
-4. The `copy` DTL copies everything from input to output
-5. The `concat` DTL is used to put text-values together
-6. The `remove` DTL is used to remove a field or multiple fields
-7. The `if` DTL is a contional statement used to add an field if condition is true
+4. Start the pipe
+5. Go to output tab and verify data is being sent out
+
+The following describes what each DTL in the code above does: 
+- The `filter` DTL gets only cars that are sold equal to true and price over 500.000 KR
+- The `copy` DTL copies everything from input to output
+- The `concat` DTL is used to put text-values together
+- The `remove` DTL is used to remove a field or multiple fields
+- The `if` DTL is a contional statement used to add an field if condition is true
+
 
 
 
