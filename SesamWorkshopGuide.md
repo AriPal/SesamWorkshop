@@ -66,7 +66,7 @@ Output we send out in cardealer-preperation-(yourname) pipe (expected result):
 ```
 
 Once all tasks are completed the outcome should look like this (your name in the end of each pipe). Keep in mind the embedded-data pipe is not something we will create in this workshop, it has been added to illustrate that this data will come from an actual system (external service). In our case we have created some mock-up data in cardealer-inbound-(yourname) pipe. 
-![image](https://user-images.githubusercontent.com/8822677/174970799-c80f789f-f12f-492f-8d26-82ae1f5c83c2.png)
+![image](https://user-images.githubusercontent.com/8822677/174971722-3d3144b0-f256-4ea9-95fa-96d1dcb7864b.png)
 
 ## Solution 1: Create a pipe with embedded-data
 1. Click on create a new pipe
@@ -146,8 +146,8 @@ Once all tasks are completed the outcome should look like this (your name in the
 }
 ``` 
 6. Now click on Save pipe
-7. Start the pipe
-8. Go to output tab and verify data is being sent out
+8. Start the pipe
+9. Go to output tab and verify data is being sent out
 
 ## Solution 2: Create an inbound pipe
 1. Click on create a new pipe
@@ -158,13 +158,14 @@ Once all tasks are completed the outcome should look like this (your name in the
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "cardealer-source-dler"
+    "dataset": "cardealer-source-(yourname)"
   }
 }
 ```
 3. Now click on Save pipe
-4. Start the pipe
-5. Go to output tab and verify data is being sent out
+5. Start the pipe
+6. Go to input tab and verity data is received
+7. Go to output tab and verify data is being sent out
 
 ## Solution 3: Create a global pipe
 1. Click on create a new pipe
@@ -184,52 +185,55 @@ Once all tasks are completed the outcome should look like this (your name in the
 ```
 3. Now click on Save pipe
 4. Start the pipe
-5. Go to output tab and verify data is being sent out
+5. Go to input tab and verity data is received
+6. Go to output tab and verify data is being sent out
 
 ## Solution 4: Create a preperation pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
 {
-  "_id": "cardealer-preperation-dler",
+  "_id": "cardealer-preperation-(yourname)",
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "global-cardealer-dler"
+    "dataset": "global-cardealer-(yourname)"
   }
 }
 ```
 3. Now click on Save pipe
 4. Start the pipe
-5. Go to output tab and verify data is being sent out
+5. Go to input tab and verity data is received
+6. Go to output tab and verify data is being sent out
 
 ## Solution 5: Create an endpoint pipe
 1. Click on create a new pipe
 2. Copy and paste this into the pipe (remember to add your name in the end of pipe name):
 ```json
 {
-  "_id": "cardealer-endpoint-dler",
+  "_id": "cardealer-endpoint-(yourname)",
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "cardealer-preperation-dler"
+    "dataset": "cardealer-preperation-(yourname)"
   }
 }
 ```
 3. Now click on Save pipe
 4. Start the pipe
-5. Go to output tab and verify data is being sent out
+5. Go to input tab and verity data is received
+6. Go to output tab and verify data is being sent out
 
 ## Solution 6: Add transformation logic to preperation pipe
 1. Gå to pipe *cardealer-preperation-(yourname)*
 2. Add field transformation like: 
 ```json
 {
-  "_id": "cardealer-preperation-dler",
+  "_id": "cardealer-preperation-(yourname)",
   "type": "pipe",
   "source": {
     "type": "dataset",
-    "dataset": "global-cardealer-dler"
+    "dataset": "global-cardealer-(yourname)"
   },
   "transform": {
     "type": "dtl",
@@ -258,7 +262,8 @@ Once all tasks are completed the outcome should look like this (your name in the
 
 ```
 4. Start the pipe
-5. Go to output tab and verify data is being sent out
+5. Go to input tab and verity data is received
+6. Go to output tab and verify data is being sent out
 
 The following describes what each DTL in the code above does: 
 - The `filter` DTL gets only cars that are sold equal to true and price over 500.000 KR
