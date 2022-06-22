@@ -8,10 +8,12 @@ References:
 
 ## Learning outcome besides the presentation
 By the end of this workshop you will learn the following: 
-1. How to create a pipe
-2. How to add test-data using embedded-data
-3. Get better understanding of these DTL's work like `add`, `copy`, `filter`, `apply` and so on
-4. How to integrate pipes so one pipe can receive data from another pipe
+1. Create a pipe
+2. Start a pipe (send data to ouput)
+3. Preview data for debugging
+4. Establish connection between pipes
+5. Add mock-data using embedded-data
+6. Get better understanding of various DTL's like `add`, `copy`, `filter`, `apply`
 
 ## Problem statement
 Cardealer has a system that shows cars that are sold and not sold like Volvo, Mercedes-Benz and BMW and so on. One of his supplier has asked him if he can create an endpoint with the followin information: 
@@ -41,7 +43,7 @@ And this is what the supplier wants (expected result):
 }
 ```
 
-To provide something like this we must set up an data-flow that looks like this (with your name after each pipe). So we first need to create all the pipes as shown in the diagram below (except embedded data pipe), establish connection and lastly add some DTL logic in cardealer-preperation-(yourname).  
+The outcome is to have a dataflow that looks like this with your name after each pipe. The following assignments will help you to achieve this. 
 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
 
