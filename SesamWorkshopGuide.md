@@ -35,8 +35,8 @@ The work tasks that needs to be solved (note when each pipe has been saved, reme
 5. Create a cardealer-endpoint-(yourname) pipe that only receives data from cardealer-preperation-(yourname) and sends out without doing any changes to the data
 6. Go to the cardealer-preperation-(yourname) pipe as previously created, and add the following changes using DTL's as shown in the presentation or can be find [here](https://docs.sesam.io/DTLReferenceGuide.html#concat-dtl-function): 
 
-- Only cars that are sold (Hint: filter)
-- Only cars that cost over 500.000 (hint: filter)
+- Only cars that are sold and cost over 500.000 (Hint: filter)
+- Add field `chassisNr`, and map the VIN number to it (hint: add)
 - If car cost more than 800.000, add a field `expensive:true` (hint: if)
 - Create a field `brandType` that concats field `brand` and `type` e.g. `brandType: Volvo XC90` (hint: concat)
 - Remove field brand and type (hint: remove)
@@ -58,7 +58,7 @@ Output we send out in cardealer-preperation-(yourname) pipe (expected result):
 {
   "cardealer-preperation-dler:brandModel": "BMW i8",
   "cardealer-preperation-dler:expensive": true,
-  "cardealer-source-dler:VIN": "JH4CC2560PC005719",
+  "cardealer-preperation-dler:chassisNr": "JH4CC2560PC005719",
   "cardealer-source-dler:manufacturedYear": 2014,
   "cardealer-source-dler:price": 950000,
   "cardealer-source-dler:sold": true
@@ -246,6 +246,7 @@ Once all tasks are completed the outcome should look like this (your name in the
           ]
         ],
         ["copy", "*"],
+        ["add", "chassisNr", "_S.VIN"],
         ["if",
           ["gt", "_S.price", 500000],
           ["add", "expensive", true]
@@ -267,6 +268,7 @@ Once all tasks are completed the outcome should look like this (your name in the
 
 The following describes what each DTL in the code above does: 
 - The `filter` DTL gets only cars that are sold equal to true and price over 500.000
+- The `add` DTL adds a field and maps the `_S.VIN` to it
 - The `copy` DTL copies everything from input to output
 - The `concat` DTL is used to put text-values together
 - The `remove` DTL is used to remove a field or multiple fields
