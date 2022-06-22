@@ -29,7 +29,7 @@ Here is a preview of what the cardealer has stored:
 }
 ```
 
-And this is what the supplier wants: 
+And this is what the supplier wants (expected result): 
 ```json
 {
   "cardealer-preperation-dler:brandModel": "BMW i8",
@@ -41,7 +41,7 @@ And this is what the supplier wants:
 }
 ```
 
-To provide something like this we must set up an data-flow that looks like this (with your name after each pipe). The logic to transform the data needs to be in cardealer-preperation-(yourname) pipe. 
+To provide something like this we must set up an data-flow that looks like this (with your name after each pipe). So we first need to create all the pipes as shown in the diagram below, establish connection and lastly add some DTL logic in cardealer-preperation-(yourname).  
 
 Highlevel overview of what we are going to create: 
 ![image](https://user-images.githubusercontent.com/8822677/174827832-ee1692cb-2f2b-4ed9-b8fc-a191ed165f4c.png)
